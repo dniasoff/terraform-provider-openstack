@@ -25,6 +25,9 @@ website/node_modules
 *.test
 *.iml
 
+dist
+
+terraform-provider-openstack
 website/vendor
 
 # Test exclusions

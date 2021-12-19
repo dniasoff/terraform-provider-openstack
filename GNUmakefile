@@ -2,11 +2,24 @@ TEST?=$$(go list ./...)
 GOFMT_FILES?=$$(find . -name '*.go')
 WEBSITE_REPO=github.com/hashicorp/terraform-website
 PKG_NAME=openstack
+NAME=${PKG_NAME}
+BINARY=terraform-provider-${NAME}
+HOSTNAME=qumulus
+NAMESPACE=terraform
+VERSION=1.46.0
+OS_ARCH=linux_amd64
 
 default: build
 
 build: fmtcheck
-	go install
+	go build -o ${BINARY}
+
+release:
+	goreleaser release --rm-dist --skip-publish  --skip-sign
+
+install: build
+	mkdir -p ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
+	mv ${BINARY} ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
 
 test: fmtcheck
 	go test -i $(TEST) || exit 1
@@ -57,4 +70,3 @@ endif
 	@$(MAKE) -C $(GOPATH)/src/$(WEBSITE_REPO) website-provider-test PROVIDER_PATH=$(shell pwd) PROVIDER_NAME=$(PKG_NAME)
 
 .PHONY: build test testacc vet fmt fmtcheck errcheck test-compile website website-test
-

@@ -1,15 +1,13 @@
-module github.com/terraform-provider-openstack/terraform-provider-openstack
+module github.com/dniasoff/terraform-provider-openstack
 
 go 1.17
 
 require (
 	github.com/gophercloud/gophercloud v0.23.1-0.20211129155426-97dea84b37a5
 	github.com/gophercloud/utils v0.0.0-20210909165623-d7085207ff6d
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.10.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.10.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/stretchr/testify v1.7.0
-	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
-	golang.org/x/tools v0.1.4 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -54,7 +52,9 @@ require (
 	github.com/zclconf/go-cty v1.9.1 // indirect
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e // indirect
 	golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4 // indirect
+	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
 	golang.org/x/text v0.3.5 // indirect
+	golang.org/x/tools v0.1.4 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.6 // indirect
 	google.golang.org/genproto v0.0.0-20200711021454-869866162049 // indirect

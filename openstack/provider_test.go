@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
+	"github.com/dniasoff/terraform-provider-openstack/openstack/internal/pathorcontents"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	"github.com/terraform-provider-openstack/terraform-provider-openstack/openstack/internal/pathorcontents"
 
 	"github.com/gophercloud/utils/terraform/auth"
 	"github.com/gophercloud/utils/terraform/mutexkv"
